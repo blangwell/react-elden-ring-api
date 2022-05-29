@@ -11,7 +11,7 @@ export default function Weapons() {
 	Make GET request to Elden Ring fan API
 	set weapons state with response data array */
 	useEffect(() => {
-		axios.get('https://eldenring.fanapis.com/api/weapons?limit=150')
+		axios.get('https://eldenring.fanapis.com/api/weapons?limit=100')
 		.then(response => {
 			setWeapons(response.data.data);
 			setDisplayWeapons(response.data.data);
