@@ -17,7 +17,7 @@ export default function Weapons() {
 			console.error(error);
 			setWeapons(null);
 		});
-	});
+	}, []);
 	
 	return (
 		<div>
