@@ -1,5 +1,7 @@
-.App {
+html {
   background: black;
-  text-align: center;
   color: white;
+}
+.App {
+  text-align: center;
 }
