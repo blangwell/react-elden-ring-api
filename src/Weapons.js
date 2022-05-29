@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import ResultCard from './ResultCard';
 
 export default function Weapons() {
 	const [weapons, setWeapons] = useState(null);
@@ -21,7 +22,7 @@ export default function Weapons() {
 	return (
 		<div>
 			<h1>Elden Ring Weapons</h1>
-			{ weapons ? weapons.map(weapon => <p key={weapon.id}>{weapon.name}</p>): null}
+			{ weapons ? weapons.map(weapon => <ResultCard key={weapon.name} weapon={weapon} />): <h2>Fetching Weapons...</h2> }
 		</div>
 	);
 }
