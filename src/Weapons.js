@@ -22,7 +22,7 @@ export default function Weapons() {
 	return (
 		<div>
 			<h1>Elden Ring Weapons</h1>
-			{ weapons ? weapons.map(weapon => <ResultCard key={weapon.name} weapon={weapon} />): null}
+			{ weapons ? weapons.map(weapon => <ResultCard key={weapon.name} weapon={weapon} />): <h2>Fetching Weapons...</h2> }
 		</div>
 	);
 }
