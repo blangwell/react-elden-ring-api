@@ -1,7 +1,12 @@
 export default function ResultCard(props) {
 	return (
-		<div>
-			<h3>{props.weapon.name}</h3>
+		<div style={{
+			border: '1px solid grey',
+			borderRadius: '5px',
+			maxWidth: '400px',
+			padding: '15px',
+		}}>
+			<h2>{props.weapon.name}</h2>
 			<p>{props.weapon.category}</p>
 			<img src={props.weapon.image} alt={`${props.weapon.name} weapon`} />
 			<p>{props.weapon.description}</p>
