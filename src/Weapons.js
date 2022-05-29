@@ -11,7 +11,7 @@ export default function Weapons() {
 	Make GET request to Elden Ring fan API
 	set weapons state with response data array */
 	useEffect(() => {
-		axios.get('https://eldenring.fanapis.com/api/weapons?limit=100')
+		axios.get('https://eldenring.fanapis.com/api/weapons?limit=150')
 		.then(response => {
 			setWeapons(response.data.data);
 			setDisplayWeapons(response.data.data);
@@ -54,6 +54,34 @@ export default function Weapons() {
 					<label htmlFor="category">
 						<input type="radio" value="bow" name="category" id="bow" />
 						Bow
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="colossal sword" name="category" id="colossal-sword" />
+						Colossal Sword
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="colossal weapon" name="category" id="colossal-weapon" />
+						Colossal Weapon
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="crossbow" name="category" id="crossbow" />
+						Crossbow
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="curved greatsword" name="category" id="curved-greatsword" />
+						Curved Greatsword
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="curved sword" name="category" id="curved-sword" />
+						Curved Sword
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="dagger" name="category" id="dagger" />
+						Dagger
+					</label>
+					<label htmlFor="category">
+						<input type="radio" value="fist" name="category" id="fist" />
+						Fist
 					</label>
 				</fieldset>
 			</form>
