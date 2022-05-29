@@ -1,0 +1,10 @@
+#filters form {
+    float: left;
+    position: fixed;
+}
+#filters fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}

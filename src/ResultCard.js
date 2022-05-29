@@ -3,8 +3,7 @@ export default function ResultCard(props) {
 		<div style={{
 			border: '1px solid grey',
 			borderRadius: '5px',
-			maxWidth: '400px',
-			padding: '15px',
+			padding: '2vh 2vw',
 		}}>
 			<h2>{props.weapon.name}</h2>
 			<p>{props.weapon.category}</p>
