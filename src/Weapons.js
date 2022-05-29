@@ -28,7 +28,9 @@ export default function Weapons() {
 			setDisplayWeapons(weapons);
 		} else {
 			let filtered = weapons.filter(weapon => {
-				return weapon.category.toLowerCase() === filter;
+				return weapon.category.toLowerCase() === filter || 
+				// or check because some categories are pluralized 
+				weapon.category.toLowerCase() === filter + 's';
 			});
 			setDisplayWeapons(filtered);
 		}
