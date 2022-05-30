@@ -11,9 +11,10 @@ export default function Weapon(props) {
 	
 	// store weapons in state on initial render
 	useEffect(() => {
+		setWeapons([]);
 		const query = gql`
 			query getWeapon($weaponCategory: String!) {
-				weapon(category: $weaponCategory) {
+				weapon(category: $weaponCategory, limit: 100) {
 					id,
 					name,
 					description,
@@ -25,7 +26,7 @@ export default function Weapon(props) {
 				}
 			}
 		`
-		const variables = { weaponCategory: params.weaponCategory }
+		const variables = { weaponCategory: params.weaponCategory.replace('%20', ' ') }
 		request('https://eldenring.fanapis.com/api/graphql', query, variables)
 		.then(data => {
 			setWeapons(data.weapon);
@@ -34,7 +35,7 @@ export default function Weapon(props) {
 			console.error(error);
 			setWeapons(null);
 		});
-	}, []);
+	}, [params]);
 
 
 	return (
