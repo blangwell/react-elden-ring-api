@@ -5,23 +5,10 @@ import {
 	Row,
 	Col,
 } from 'react-bootstrap';
-import { request, gql } from 'graphql-request';
-
-import ResultCard from './ResultCard';
+import categories from './categories';
 import './Weapons.css';
-import WeaponCategory from './WeaponCategory';
 
 export default function Weapons() {
-	const [weapons, setWeapons] = useState([]);
-	const [displayWeapons, setDisplayWeapons] = useState([]);
-	const [filter, setFilter] = useState("");
-	const CATEGORIES = ["Axe", "Bow", "Claw", "Colossal Sword", "Colossal Weapon", "Crossbows",
-		"Curved Greatsword", "Curved Sword", "Dagger", "Fist", "Flail", "Glintstone Staff", "Greataxe",
-		"Great Spear", "Greatswords", "Halberd", "Hammer", "Heavy Thrusting Sword", "Katana",
-		"Light Bow", "Reaper", "Sacred Seal", "Spear", "Straight Sword", "Thrusting Sword", "Torch",
-		"Twinblades", "Warhammer", "Whip"
-	];
-
 	/* On initial render:
 	Make GET request to Elden Ring fan API
 	set weapons state with response da:w
@@ -70,9 +57,9 @@ export default function Weapons() {
 	return (
 		<Container>
 			<nav>
-				{CATEGORIES.map(category => (
+				{categories.map(category => (
 					<Link to={`/weapons/${category}`} key={category}>
-					{ category }
+					{category}
 					</Link>
 				))}
 			</nav>

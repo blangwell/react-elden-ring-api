@@ -11,6 +11,8 @@ import App from './App';
 import Home from './Home';
 import Weapons from './Weapons';
 import WeaponCategory from './WeaponCategory';
+import WeaponIndex from './WeaponIndex';
+import categories from './categories';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +21,7 @@ root.render(
 			<Route path="/" element={<App />}>
 				<Route index element={<Home />} />
 				<Route path="weapons" element={<Weapons />} >
-					<Route index element={<div><h1>Select a Weapon</h1></div>} />
+					<Route index element={<WeaponIndex categories={categories} />} />
 					<Route path=":weaponCategory" element={<WeaponCategory />} /> 
 				</Route>
 			</Route> 
