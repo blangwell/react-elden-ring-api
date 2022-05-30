@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
 	Container,
 	Row,
 	Col,
 } from 'react-bootstrap';
+import { request, gql } from 'graphql-request';
 
 import ResultCard from './ResultCard';
 import './Weapons.css';
@@ -18,10 +18,26 @@ export default function Weapons() {
 	Make GET request to Elden Ring fan API
 	set weapons state with response data array */
 	useEffect(() => {
-		axios.get('https://eldenring.fanapis.com/api/weapons?limit=100')
-		.then(response => {
-			setWeapons(response.data.data);
-			setDisplayWeapons(response.data.data);
+		const query = gql`
+		{
+			weapon(category: "Axe") {
+				id,
+				name,
+				description,
+				image, 
+				scalesWith {
+					name,
+					scaling
+				},
+
+			}
+		}
+		`
+		request('https://eldenring.fanapis.com/api/graphql', query)
+		.then(data => {
+			console.log(data.weapon)
+			setWeapons(data.weapon);
+			setDisplayWeapons(data.weapon);
 		})
 		.catch(error => {
 			console.error(error);
