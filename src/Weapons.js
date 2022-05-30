@@ -6,6 +6,7 @@ import {
 	Accordion,
 	ListGroup,
 } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import categories from './categories';
 import './Weapons.css';
 
@@ -14,7 +15,6 @@ export default function Weapons() {
 		<Container>
 			<Row>
 				<Col md="3">
-
 					<Accordion flush>
 						<Accordion.Item eventKey="0">
 							<Accordion.Header>Categories</Accordion.Header>
@@ -22,11 +22,11 @@ export default function Weapons() {
 							<nav>
 							<ListGroup>
 								{categories.map(category => (
-									<ListGroup.Item action href={category}>
-										<Link to={`/weapons/${category}`} key={category}>
-										{category}
-										</Link>
-									</ListGroup.Item>
+									<LinkContainer to={category} key={category} >
+										<ListGroup.Item key={category} action href={category}>
+											{category}
+										</ListGroup.Item>
+									</LinkContainer>
 								))}	
 							</ListGroup>
 							</nav>
