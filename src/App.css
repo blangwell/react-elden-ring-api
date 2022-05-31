@@ -1,5 +1,9 @@
+:root { 
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
 .App {
   text-align: center;
-  background: black !important;
-  color: white;
+  background: var(--bs-dark);
+  color: var(--bs-light);
 }

@@ -14,13 +14,13 @@ export default function Weapons() {
 	return (
 		<Container fluid>
 			<Row>
-				<Col md="3">
+				<Col md="3" style={{position: 'fixed'}}>
 					<Accordion flush>
 						<Accordion.Item eventKey="0">
 							<Accordion.Header>Categories</Accordion.Header>
 							<Accordion.Body>
 							<nav>
-							<ListGroup>
+							<ListGroup className="bg-dark">
 								{categories.map(category => (
 									<LinkContainer to={category} key={category} >
 										<ListGroup.Item key={category} action href={category}>
@@ -34,7 +34,7 @@ export default function Weapons() {
 						</Accordion.Item>
 					</Accordion>
 				</Col>
-				<Col md="9">
+				<Col md="9" className="offset-md-3">
 					<Outlet />
 				</Col>
 			</Row>

@@ -5,8 +5,8 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 function App() {
   return (
-    <div className="App">
-			<Navbar bg="dark" variant="dark">
+    <div className="App"  style={{paddingTop: '80px'}} >
+			<Navbar bg="dark" variant="dark" fixed="top">
 				<Container fluid>
 				<LinkContainer to="/">
 					<Navbar.Brand>Elden Ring</Navbar.Brand>
