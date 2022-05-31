@@ -7,21 +7,20 @@ function App() {
   return (
     <div className="App">
 			<Navbar bg="dark" variant="dark">
-				<Container>
+				<Container fluid>
 				<LinkContainer to="/">
 					<Navbar.Brand>Elden Ring</Navbar.Brand>
 				</LinkContainer>
-				<Nav className="me-auto">
-					<LinkContainer to="/weapons">
-						<Nav.Link>Weapons</Nav.Link>
+				<Nav className="me-auto" activeKey="/">
+					<LinkContainer to="weapons">
+						<Nav.Link eventKey="weapons">Weapons</Nav.Link>
+					</LinkContainer>
+					<LinkContainer to="notWeapons">
+						<Nav.Link eventKey="notWeapons">Not Weapons</Nav.Link>
 					</LinkContainer>
 				</Nav>
 				</Container>
 			</Navbar>
-		 	<nav>
-				<NavLink to="/">Home</NavLink>
-				<NavLink to="/weapons">Weapons</NavLink>
-			</nav>
 			<Outlet />
     </div>
   );

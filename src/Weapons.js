@@ -12,7 +12,7 @@ import './Weapons.css';
 
 export default function Weapons() {
 	return (
-		<Container>
+		<Container fluid>
 			<Row>
 				<Col md="3">
 					<Accordion flush>

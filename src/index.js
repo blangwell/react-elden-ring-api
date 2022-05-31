@@ -24,8 +24,8 @@ root.render(
 					<Route index element={<WeaponIndex categories={categories} />} />
 					<Route path=":weaponCategory" element={<WeaponCategory />} /> 
 				</Route>
+				<Route path="*" element={<div><h2>There ain't nothin here!</h2></div>} />
 			</Route> 
-			<Route path="*" element={<div><h2>There ain't nothin here!</h2></div>} />
 		</Routes>
 	</BrowserRouter>
 );
