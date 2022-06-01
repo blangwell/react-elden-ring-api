@@ -2,8 +2,7 @@
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
 }
-.App {
-  text-align: center;
-  background: var(--bs-dark);
+:root, .App {
+  background-color: var(--bs-dark);
   color: var(--bs-light);
 }

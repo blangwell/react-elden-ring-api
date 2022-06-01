@@ -13,31 +13,31 @@ import './Weapons.css';
 export default function Weapons() {
 	return (
 		<Container fluid>
-			<Row>
-				<Col md="3" style={{position: 'fixed'}}>
-					<Accordion flush>
-						<Accordion.Item eventKey="0">
-							<Accordion.Header>Categories</Accordion.Header>
-							<Accordion.Body>
-							<nav>
-							<ListGroup className="bg-dark">
-								{categories.map(category => (
-									<LinkContainer to={category} key={category} >
-										<ListGroup.Item key={category} action href={category}>
-											{category}
-										</ListGroup.Item>
-									</LinkContainer>
-								))}	
-							</ListGroup>
-							</nav>
-							</Accordion.Body>
-						</Accordion.Item>
-					</Accordion>
-				</Col>
-				<Col md="9" className="offset-md-3">
-					<Outlet />
-				</Col>
-			</Row>
+		<Row>
+			<Col xs={12} sm={3}>
+				<Accordion flush>
+				<Accordion.Item eventKey="0">
+					<Accordion.Header>Categories</Accordion.Header>
+					<Accordion.Body>
+					<nav>
+						<ListGroup className="bg-dark">
+							{categories.map(category => (
+								<LinkContainer to={category} key={category} >
+									<ListGroup.Item key={category} action href={category}>
+										{category}
+									</ListGroup.Item>
+								</LinkContainer>
+							))}	
+						</ListGroup>
+					</nav>
+					</Accordion.Body>
+				</Accordion.Item>
+				</Accordion>
+			</Col>
+			<Col xs={12} sm={9} className="offset-md-3">
+				<Outlet />
+			</Col>
+		</Row>
 		</Container>
 	);
 }

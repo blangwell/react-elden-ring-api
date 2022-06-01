@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { request, gql } from 'graphql-request';
+import { Container, Row, Col } from 'react-bootstrap';
 import ResultCard from './ResultCard';
 
 export default function Weapon(props) {
@@ -39,10 +40,12 @@ export default function Weapon(props) {
 
 
 	return (
-		<div>
-			{weapons ? weapons.map(weapon => (
-				<ResultCard key={weapon.name} weapon={weapon} />
-			)) : <h1>Fetching Weapons...</h1>}
-		</div>
+		<Container>
+			<Row xs={12} sm="auto">
+				{weapons ? weapons.map(weapon => (
+					<ResultCard key={weapon.name} weapon={weapon} />
+				)) : <h1>Fetching Weapons...</h1>}
+			</Row>
+		</Container>
 	)
 }
